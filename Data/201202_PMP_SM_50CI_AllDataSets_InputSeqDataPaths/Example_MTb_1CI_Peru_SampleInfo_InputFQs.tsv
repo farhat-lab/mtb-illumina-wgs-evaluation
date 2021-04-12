@@ -1,0 +1,2 @@
+SampleID	PacBio_FQ_PATH	Illumina_PE_FQs_PATH	Dataset_Tag
+M0011368_9	/n/data1/hms/dbmi/farhat/mm774/Projects/PacBio_Evaluation_Project/PacmanPipe_SM_Outputs/191203_PMP_SM_All_Mtb_PacBioDatasetsMergedsample_Output/M0011368_9/pacbio/pacbio_reads/M0011368_9.merged.subreads.fastq.gz	/n/data1/hms/dbmi/farhat/fastq_db/cetr/Peru2938_R1.fastq.gz;/n/data1/hms/dbmi/farhat/fastq_db/cetr/Peru2938_R2.fastq.gz	Farhat_Peru_2019

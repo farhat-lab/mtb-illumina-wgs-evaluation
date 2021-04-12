@@ -1,0 +1,22 @@
+#lineage	position	gene_coord	allele_change	codon_number	codon_change	aa_change	locus_id	gene_name
+lin2	497491		G/A	270		D/D	Rv0411c	glnH
+proto_beijing	3309880		G/A	137		L/L	Rv2957	-
+lin2.2	2505085		G/A	205		A/A	Rv2231c	cobC
+lin2.2	4280708		G/A	27		V/V	Rv3815c	-
+asia_ancestral_1	346693		G/T	353		S/S	Rv0284	eccC3
+asia_ancestral_2	886115		T/C	178		T/A	Rv0792c	-
+lin2.2.1	2825581		T/G	503		I/I	Rv2510c	-
+lin2.2.1	797736		C/T	268		L/L	Rv0697	-
+lin2.2.1	4160371		C/A	44		G/C	Rv3715c	recR
+asia_ancestral_3	1477522		C/A	37		R/L	Rv1316c	ogt
+asian_african_1	782634		A/G	50		A/A	Rv0684	fusA1
+asian_african_3	1059643		G/A	462		G/S	Rv0949	uvrD1
+europe/russia_B0/W148_outbreak	4086		G/T	269		G/G	Rv0003	recF
+central_asia	1364706		G/A	98		L/L	Rv1221	sigE
+asian_african_2	2376135		A/G	52		S/S	Rv2115c	mpa
+asian_african_2	2532616		G/A	124		E/E	Rv2259	mscR
+pacific_RD150	4248115		C/T	534		D/D	Rv3795	embB
+pacific_RD150	1844339		A/G	200		D/G	Rv1638	uvrA
+asian_african_2/RD142	1692069		A/G	60		A/A	Rv1501	-
+asian_african_2/RD142	1479088		C/T	11		A/T	Rv1317c	alkA
+asian_african_2/RD142	3836274		G/A	206		P/P	Rv3417c	groEL1

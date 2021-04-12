@@ -1,0 +1,1 @@
+Taken from https://github.com/joanam/scripts/blob/master/vcf2phylip.py

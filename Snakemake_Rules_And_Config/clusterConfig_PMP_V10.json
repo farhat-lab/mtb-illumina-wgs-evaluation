@@ -1,0 +1,250 @@
+{
+    "__default__" :
+    {
+        "t" : "0-00:4:0",
+        "n" : 1,
+        "c" : 1,
+        "p" : "short",
+        "mem" : "2500mb",
+        "o" : "O2logs/cluster/{rule}.{wildcards}.out",
+        "e" : "O2logs/cluster/{rule}.{wildcards}.out"
+    },
+    "calculate_F2_Score_IlluminaPE" :
+    {
+        "t" : "0-00:1:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "2G",
+    },
+    "calculate_F2_Score_PacBio_Subreads" :
+    {
+        "t" : "0-00:5:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "2G",
+    },
+    "process_Pmap_and_NucDiffSV_Regions_ForStratification" :
+    {
+        "t" : "0-00:1:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "500mb",
+    },
+    "trimmomatic_Illumina_PE_Trimming" :
+    {
+        "t" : "0-01:30:0",
+        "n" : 8,
+        "p" : "short",
+        "mem" : "4G",
+    },
+    "bwa_map_IllPE_AlignTo_H37rv" :
+    {
+        "t" : "0-00:20:0",
+        "n" : 8,
+        "p" : "short",
+        "mem" : "8G",
+    },
+    "samtools_ViewAndSort_IllPE_AlignTo_H37rv" :
+    {
+        "t" : "0-00:15:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "8G",
+    },
+    "bcftools_mpileup_VarCalling_IllPE_AlignTo_H37rv" :
+    {
+        "t" : "0-01:10:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "10G",
+    },  
+    "pilon_VarCalling_IllPE_AlignTo_H37rv_Default_Variant" :
+    {
+        "t" : "0-00:30:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "12G",
+    },
+    "pilon_VarCalling_IllPE_AlignTo_H37rv_minMQ_1_minDP_5_Fix_All_Breaks" :
+    {
+        "t" : "0-00:30:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "12G",
+    },    
+    "picard_RemoveDup_IllPE_AlignTo_H37rv" :
+    {
+        "t" : "0-0:10:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "10G",
+    },
+    "PacBio_Subreads_GetReadLengthsTSV" :
+    {
+        "t" : "0-00:15:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "1G",
+    },
+    "nanoplot_QC" :
+    {
+        "t" : "0-01:40:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "6G",
+    },
+    "align_PacBio_Subreads_To_H37Rv_Minimap2" :
+    {
+        "t" : "0-1:45:0",
+        "n" : 10,
+        "p" : "short",
+        "mem" : "8G",
+    },
+    "samtools_ViewAndSort_PacBio_Subreads_To_H37Rv_Minimap2" :
+    {
+        "t" : "0-1:20:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "10G",
+    },
+    "pilon_VarCalling_PacBio_Subreads_AlignTo_H37rv_DefaultParam" :
+    {
+        "t" : "0-5:30:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "85G",
+    },
+    "flye_Assemble" :
+    {
+        "t" : "0-2:10:0",
+        "n" : 10,
+        "p" : "priority",
+        "mem" : "25G",
+    },
+    "output_CircularContigs" :
+    {
+        "t" : "0-0:01:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "1G",
+    },
+    "circlator_FixStart_DnaA" :
+    {
+        "t" : "0-00:20:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "4G",
+    },
+    "Prokka_Anno_FlyeAssembly_I3_PB_DeNovo" :
+    {
+        "t" : "0-00:30:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "10G",
+    },
+    "bwa_map_IllPE_AlignTo_I3_Assembly" :
+    {
+        "t" : "0-00:20:0",
+        "n" : 8,
+        "p" : "short",
+        "mem" : "8G",
+    },
+    "samtools_ViewAndSort_IllPE_AlignTo_I3_Assembly" :
+    {
+        "t" : "0-00:15:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "8G",
+    },
+    "picard_RemoveDup_IllPE_AlignTo_I3_Assembly" :
+    {
+        "t" : "0-00:15:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "5G",
+    },
+    "pilon_IllPE_Polishing_I3_Assembly" :
+    {
+        "t" : "0-01:59:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "26G",
+    },
+    "Prokka_Anno_I3_PilonPolished" :
+    {
+        "t" : "0-00:20:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "6G",
+    },
+    "CP_PacBio_FlyeAssembly_To_I3_Dir" :
+    {
+        "t" : "0-00:1:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "500mb",
+    },
+    "output_CircularContigs" :
+    {
+        "t" : "0-00:00:30",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "100mb",
+    },
+    "bwa_map_IllPE_AlignTo_Flye_I3_PP_Assembly" :
+    {
+        "t" : "0-00:25:0",
+        "n" : 8,
+        "p" : "short",
+        "mem" : "8G",
+    },
+    "samtools_ViewSortAndGetDepth_IllPE_AlignTo_Flye_I3_PP" :
+    {
+        "t" : "0-00:15:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "5G",
+    },
+    "picard_RemoveDup_AND_samtools_ViewSortAndGetDepth_IllPE_AlignTo_Flye_I3_PP" :
+    {
+        "t" : "0-00:15:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "5G",
+    },
+    "align_PacBio_Subreads_To_Flye_I3_PP_Assembly_With_Minimap2" :
+    {
+        "t" : "0-1:45:0",
+        "n" : 10,
+        "p" : "short",
+        "mem" : "8G",
+    },
+    "samtools_Depth_PacBio_Subreads_To_H37Rv_Minimap2" :
+    {
+        "t" : "0-0:40:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "10G",
+    },
+    "NucDiff_Analysis_Flye_I3_PP_vs_H37rv" :
+    {
+        "t" : "0-0:13:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "4G",
+    },
+    "samtools_Depth_AverageAll_PacBio_Subreads_To_H37Rv_Minimap2" :
+    {
+        "t" : "0-0:40:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "10G",
+    },
+    "calcEBR_EmpiricalBasePairRecall_V7" :
+    {
+        "t" : "0-0:8:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "6G",
+    },
+}

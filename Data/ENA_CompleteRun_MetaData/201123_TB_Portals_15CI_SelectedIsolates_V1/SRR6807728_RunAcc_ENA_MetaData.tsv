@@ -1,0 +1,2 @@
+study_accession	sample_accession	experiment_accession	run_accession	tax_id	scientific_name	fastq_ftp	submitted_ftp	sra_ftp
+PRJNA436997	SAMN08636982	SRX5234230	SRR6807728	1773	Mycobacterium tuberculosis	ftp.sra.ebi.ac.uk/vol1/fastq/SRR680/008/SRR6807728/SRR6807728_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR680/008/SRR6807728/SRR6807728_2.fastq.gz		ftp.sra.ebi.ac.uk/vol1/srr/SRR680/008/SRR6807728
