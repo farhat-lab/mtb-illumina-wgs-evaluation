@@ -25,7 +25,7 @@ From this work we present many useful results that can help guide future genomic
 
 
 ## Installation
-All dependancesis needed to reproduce analysis can be installed via Conda(https://docs.conda.io/en/latest/) .
+All dependencies needed to reproduce analysis can be installed via Conda(https://docs.conda.io/en/latest/) .
 ```
 ```
 The above command will create a Conda environment with:
