@@ -5,12 +5,9 @@ This repository contains the bioinformatics pipeline and code needed to reproduc
 
 ## Contents
 - [Installation](#Installation)
-- [Key Results](#Installation)
-- [Useful References and Visualizations]()
 - [SnakeMake Pipeline]()
 - [Data Analysis]()
 - [License](#License)
-
 
 
 ## A) Installation
@@ -68,26 +65,20 @@ snakemake -s SnakeFile_Main_Processing.smk.py --config output_dir=${targetOutput
 
 ## C) Supporting Data Analysis 
 
-The [DataAnalysis](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tree/main/DataAnalysis) directory contains Jupyter notebooks for downstream data processing, table generation, and figure generation.
-The direcrory structure is as follows:
-``` 
-DIRECTORY STRUCTURE HERE
-``` 
+The [DataAnalysis/](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tree/main/DataAnalysis) directory contains Jupyter notebooks for downstream data processing, table generation, and figure generation.
 
 
-## Key Results 
 
-In this work we used long read sequencing to throughly benchmark Illumina sequencing performance across the Mtb genome. From this work we produced many useful insights for future studies of the Mtb genome using Illumina WGS.
 
-## Useful Genome-wide statistics and visualizations (H37Rv, the Mtb reference genome)
+
+## D) Useful results for future Mtb genomics analyses
+
+### Useful Genome-wide statistics and visualizations (H37Rv, the Mtb reference genome)
 From this work we present many useful results that can help guide future genomics studies of the Mtb genome using Illumina WGS. 
 
 
-## Genome Masking Schemes
+### Genome Masking Schemes
 ### PROVIDED GENOME MASKING SCHEMES HERE
-
-
-
 
 
 
