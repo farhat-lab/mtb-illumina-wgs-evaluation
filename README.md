@@ -44,7 +44,7 @@ To run the SnakeMake pipeline you need to provide:
 - c) A config file specifing computational resource requirements for 
 
 
-```
+``` 
 # Define path to the target output directory
 targetOutput_Dir="../Mtb_PacBio_And_Illumina_Manuscript_SnakeMake_Output_V1"
 
@@ -64,15 +64,15 @@ input_SampleInfo_TSV="${inputData_TSV_Dir}/201202_MTb_50CI_Peru_ChinerOms_Ngabon
 mkdir -p ${targetOutput_Dir}/O2logs/cluster/
 
 snakemake -s SnakeFile_Main_Processing.smk.py --config output_dir=${targetOutput_Dir} inputSampleData_TSV=${input_SampleInfo_TSV} --configfile ${inputConfigFile} -p --use-conda -j 50 --cluster-config  ${SLURM_Cluster_Config}  --cluster "sbatch -p {cluster.p} -n {cluster.n}  -t {cluster.t} --mem {cluster.mem} -o ${targetOutput_Dir}/{cluster.o} -e ${targetOutput_Dir}/{cluster.e}" --latency-wait 35 -k 
-```
+``` 
 
 ## C) Supporting Data Analysis 
 
 The [DataAnalysis](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tree/main/DataAnalysis) directory contains Jupyter notebooks for downstream data processing, table generation, and figure generation.
 The direcrory structure is as follows:
-```
+``` 
 DIRECTORY STRUCTURE HERE
-```
+``` 
 
 
 ## Key Results 
