@@ -1,6 +1,6 @@
 # Evaluation of short-read sequencing performance across the Mtb genome
 
-This repository contains the bioinformatics pipeline and code needed to reproduce the analysis for [*Genomic sequence characteristics and the empiric accuracy of short-read sequencing, 2021, BioRxiv*](https://www.biorxiv.org/content/10.1101/2021.04.08.438862v1). All key bioinformatics processing is implemented using the [SnakeMake](https://snakemake.github.io/) workflow language, along with all downstream analysis available in Jupyter notebooks using Python 3.7. All software dependencies are defined for processing and analysis steps using [Conda](https://docs.conda.io/en/latest/). 
+This repository contains the bioinformatics pipeline and code needed to reproduce the analysis for [*Genomic sequence characteristics and the empiric accuracy of short-read sequencing, 2021, BioRxiv*](https://www.biorxiv.org/content/10.1101/2021.04.08.438862v1). All key bioinformatics processing is implemented using the [SnakeMake](https://snakemake.github.io/) workflow system, along with all downstream analysis available in Jupyter notebooks using Python 3.7. All software dependencies are defined for processing and analysis steps using [Conda](https://docs.conda.io/en/latest/). 
 
 
 ## Contents
@@ -37,8 +37,8 @@ The provided Snakemake pipeline implements all steps related to Assembly, alignm
 
 To run the SnakeMake pipeline you need to provide:
 - a) Path to a target outout directory
-- b) A config file with paths to H37Rv reference files (FASTA and GBK formats) 
-- c) A config file specifing computational resource requirements for 
+- b) A config file with paths to H37Rv ([NC_000962.3](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3) ) reference files (FASTA and GBK formats) 
+- c) A config file specifing computational resource requirements for steps of the pipeline when using [SLURM](https://slurm.schedmd.com/documentation.html)
 
 
 ``` 
@@ -69,18 +69,13 @@ The [DataAnalysis/](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tr
 
 
 
-
-
 ## D) Useful results for future Mtb genomics analyses
 
 ### Useful Genome-wide statistics and visualizations (H37Rv, the Mtb reference genome)
 From this work we present many useful results that can help guide future genomics studies of the Mtb genome using Illumina WGS. 
 
-
 ### Genome Masking Schemes
-### PROVIDED GENOME MASKING SCHEMES HERE
-
-
+#### PROVIDED GENOME MASKING SCHEMES HERE
 
 
 ## License
