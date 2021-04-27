@@ -46,21 +46,21 @@ To run the SnakeMake pipeline you need to provide:
 To run the SnakeMake workflow, run the following bash commands:
 ``` 
 # Define path to the target output directory
-
-## A)
 targetOutput_Dir="../Mtb_PacBio_And_Illumina_Manuscript_SnakeMake_Output_V1"
-## B)
+
+# Define config file 
 SnakeMake_ConfigFile="Snakemake_Rules_And_Config/config_PMP_V6.json"
-## C)
+
+# Define SLURM config file
 SLURM_Cluster_Config="Snakemake_Rules_And_Config/clusterConfig_PMP_V10.json"
 
-mkdir ${targetOutput_Dir}
+# Define path to TSV that specifies Sample Metadata and FASTQ PATHs
 
-## D) Define path to TSV that specifies Sample Metadata and FASTQ PATHs
 inputData_TSV_Dir="Data/201202_PMP_SM_50CI_AllDataSets_InputSeqDataPaths"
-
 input_SampleInfo_TSV="${inputData_TSV_Dir}/201202_MTb_50CI_Peru_ChinerOms_Ngabonziza_TBPortals_PacBioDatasetsMerged_SampleInfo_InputFQs.tsv"
 
+# Run SnakeMake pipeline
+mkdir ${targetOutput_Dir}
 mkdir -p ${targetOutput_Dir}/O2logs/cluster/
 
 snakemake -s SnakeFile_Main_Processing.smk.py --config output_dir=${targetOutput_Dir} inputSampleData_TSV=${input_SampleInfo_TSV} --configfile ${inputConfigFile} -p --use-conda -j 50 --cluster-config  ${SLURM_Cluster_Config}  --cluster "sbatch -p {cluster.p} -n {cluster.n}  -t {cluster.t} --mem {cluster.mem} -o ${targetOutput_Dir}/{cluster.o} -e ${targetOutput_Dir}/{cluster.e}" --latency-wait 35 -k 
