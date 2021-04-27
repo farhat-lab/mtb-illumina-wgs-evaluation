@@ -7,11 +7,12 @@ This repository contains the bioinformatics pipeline and code needed to reproduc
 - [Installation](#Installation)
 - [SnakeMake Pipeline]()
 - [Data Analysis]()
+- [Results](#Results)
 - [License](#License)
 
 
-## A) Installation
-All dependencies needed to reproduce analysis can be installed via Conda(https://docs.conda.io/en/latest/) .
+# Installation
+All dependencies needed to reproduce this analysis can be installed via Conda(https://docs.conda.io/en/latest/) .
 ```
 # 1) Clone repository
 git clone https://github.com/farhat-lab/mtb-illumina-wgs-evaluation
@@ -31,7 +32,7 @@ The above command will create a Conda environment with:
 - c) Python libraries for downstream analysis.
 
 
-## B) Running the SnakeMake Pipeline (Processing of Illumina and PacBio data)
+# Processing of Illumina and PacBio data 
 
 The provided Snakemake pipeline implements all steps related to Assembly, alignment, and other key processing steps.
 
@@ -63,13 +64,13 @@ mkdir -p ${targetOutput_Dir}/O2logs/cluster/
 snakemake -s SnakeFile_Main_Processing.smk.py --config output_dir=${targetOutput_Dir} inputSampleData_TSV=${input_SampleInfo_TSV} --configfile ${inputConfigFile} -p --use-conda -j 50 --cluster-config  ${SLURM_Cluster_Config}  --cluster "sbatch -p {cluster.p} -n {cluster.n}  -t {cluster.t} --mem {cluster.mem} -o ${targetOutput_Dir}/{cluster.o} -e ${targetOutput_Dir}/{cluster.e}" --latency-wait 35 -k 
 ``` 
 
-## C) Supporting Data Analysis 
+# Supporting Data Analysis 
 
 The [DataAnalysis/](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tree/main/DataAnalysis) directory contains Jupyter notebooks for downstream data processing, table generation, and figure generation.
 
 
 
-## D) Useful results for future Mtb genomics analyses
+# Results
 
 ### Useful Genome-wide statistics and visualizations (H37Rv, the Mtb reference genome)
 From this work we present many useful results that can help guide future genomics studies of the Mtb genome using Illumina WGS. 
