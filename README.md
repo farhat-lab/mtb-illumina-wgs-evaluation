@@ -32,42 +32,46 @@ The above command will create a Conda environment with:
 - c) Python libraries for downstream analysis.
 
 
-# Processing of Illumina and PacBio data 
+# Processing of Illumina and PacBio sequencing 
 
 The provided Snakemake pipeline implements all steps related to Assembly, alignment, and other key processing steps.
 
 To run the SnakeMake pipeline you need to provide:
-- a) Path to a target outout directory
-- b) A config file with paths to H37Rv ([NC_000962.3](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3) ) reference files (FASTA and GBK formats) 
-- c) A config file specifing computational resource requirements for steps of the pipeline when using [SLURM](https://slurm.schedmd.com/documentation.html)
+- a) A TSV with sample metadata and input FASTQ paths (Illumina and PacBio). Examples can be found in `Data/201202_PMP_SM_50CI_AllDataSets_InputSeqDataPaths`.
+- b) Path to a target outout directory
+- c) A [config file](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/blob/main/Snakemake_Rules_And_Config/config_PMP_V6.json) with paths to H37Rv reference files ([NC_000962.3](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3) ) in FASTA and GBK formats.
+- d) A [cluster config file](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/blob/main/Snakemake_Rules_And_Config/clusterConfig_PMP_V10.json) specifing computational resource requirements for steps of the pipeline when using [SLURM](https://slurm.schedmd.com/documentation.html)
 
 
+To run the SnakeMake workflow, run the following bash commands:
 ``` 
 # Define path to the target output directory
+
+## A)
 targetOutput_Dir="../Mtb_PacBio_And_Illumina_Manuscript_SnakeMake_Output_V1"
-
+## B)
 SnakeMake_ConfigFile="Snakemake_Rules_And_Config/config_PMP_V6.json"
-
+## C)
 SLURM_Cluster_Config="Snakemake_Rules_And_Config/clusterConfig_PMP_V10.json"
 
 mkdir ${targetOutput_Dir}
 
-# Define path to TSV that specifies Sample Metadata and FASTQ PATHs
-
+## D) Define path to TSV that specifies Sample Metadata and FASTQ PATHs
 inputData_TSV_Dir="Data/201202_PMP_SM_50CI_AllDataSets_InputSeqDataPaths"
 
 input_SampleInfo_TSV="${inputData_TSV_Dir}/201202_MTb_50CI_Peru_ChinerOms_Ngabonziza_TBPortals_PacBioDatasetsMerged_SampleInfo_InputFQs.tsv"
-
 
 mkdir -p ${targetOutput_Dir}/O2logs/cluster/
 
 snakemake -s SnakeFile_Main_Processing.smk.py --config output_dir=${targetOutput_Dir} inputSampleData_TSV=${input_SampleInfo_TSV} --configfile ${inputConfigFile} -p --use-conda -j 50 --cluster-config  ${SLURM_Cluster_Config}  --cluster "sbatch -p {cluster.p} -n {cluster.n}  -t {cluster.t} --mem {cluster.mem} -o ${targetOutput_Dir}/{cluster.o} -e ${targetOutput_Dir}/{cluster.e}" --latency-wait 35 -k 
 ``` 
+The final command will begin the SnakeMake pipeline using the SLURM workload manager. 
+
+
 
 # Supporting Data Analysis 
 
-The [DataAnalysis/](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tree/main/DataAnalysis) directory contains Jupyter notebooks for downstream data processing, table generation, and figure generation.
-
+The [DataAnalysis/](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tree/main/DataAnalysis) directory contains Jupyter notebooks for downstream data processing, table generation, and figure generation related to this work.
 
 
 # Results
