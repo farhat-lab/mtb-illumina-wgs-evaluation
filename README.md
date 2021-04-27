@@ -6,7 +6,7 @@ This repository contains the bioinformatics pipeline and code needed to reproduc
 ## Contents
 - [Installation](#Installation)
 - [SnakeMake Pipeline]()
-- [Data Analysis](#Supporting Data Analysis)
+- [Data Analysis](#Supporting-Data-Analysis)
 - [Results](#Results)
 - [License](#License)
 
