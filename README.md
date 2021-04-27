@@ -6,13 +6,13 @@ This repository contains the bioinformatics pipeline and code needed to reproduc
 ## Contents
 - [Installation](#Installation)
 - [SnakeMake Pipeline]()
-- [Data Analysis]()
+- [Data Analysis](#Supporting Data Analysis)
 - [Results](#Results)
 - [License](#License)
 
 
 # Installation
-All dependencies needed to reproduce this analysis can be installed via Conda(https://docs.conda.io/en/latest/) .
+All dependencies needed to reproduce this analysis can be installed via [Conda](https://docs.conda.io/en/latest/) .
 ```
 # 1) Clone repository
 git clone https://github.com/farhat-lab/mtb-illumina-wgs-evaluation
