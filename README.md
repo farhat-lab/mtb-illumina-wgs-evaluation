@@ -20,7 +20,7 @@ git clone https://github.com/farhat-lab/mtb-illumina-wgs-evaluation
 # 2) Create a conda environment named 'CoreEnv_MtbEval_V1'
 cd mtb-illumina-wgs-evaluation/
 
-conda env create --file envname.yml -n CoreEnv_MtbEval_V1
+conda env create --file CondaEnvs/Core_CondaEnv_Mtb_Illumina_WGS_Benchmarking_V1.yml -n CoreEnv_MtbEval_V1
 
 # 3) Activate environment (used for SnakeMake pipeline and data analysis)
 conda activate CoreEnv_MtbEval_V1
