@@ -1,0 +1,38 @@
+name: bioinfo_util_env_V1
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=1_gnu
+  - bcftools=1.11=h7c999a4_0
+  - bioawk=1.0=hed695b0_5
+  - bzip2=1.0.8=h7f98852_4
+  - c-ares=1.11.0=h470a237_1
+  - ca-certificates=2020.12.5=ha878542_0
+  - gsl=2.6=he838d99_2
+  - htslib=1.11=hd3b49d5_2
+  - krb5=1.17.2=h926e7f8_0
+  - libblas=3.9.0=7_openblas
+  - libcblas=3.9.0=7_openblas
+  - libcurl=7.71.1=hcdd3856_8
+  - libdeflate=1.7=h7f98852_5
+  - libedit=3.1.20191231=he28a2e2_2
+  - libev=4.33=h516909a_1
+  - libgcc-ng=9.3.0=h2828fa1_18
+  - libgfortran-ng=9.3.0=hff62375_18
+  - libgfortran5=9.3.0=hff62375_18
+  - libgomp=9.3.0=h2828fa1_18
+  - libnghttp2=1.41.0=hab1572f_1
+  - libopenblas=0.3.12=pthreads_h4812303_1
+  - libssh2=1.9.0=hab1572f_5
+  - libstdcxx-ng=9.3.0=h6de172a_18
+  - ncurses=6.2=h58526e2_4
+  - openssl=1.1.1i=h7f98852_0
+  - perl=5.32.0=h36c2ea0_0
+  - samtools=1.11=h6270b1f_0
+  - tk=8.6.10=h21135ba_1
+  - xz=5.2.5=h516909a_1
+  - zlib=1.2.11=h516909a_1010
+prefix: /home/mm774/conda3/envs/bioinfo_util_env_V1

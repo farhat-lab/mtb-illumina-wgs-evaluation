@@ -118,7 +118,7 @@
     {
         "t" : "0-2:10:0",
         "n" : 10,
-        "p" : "priority",
+        "p" : "short",
         "mem" : "25G",
     },
     "output_CircularContigs" :

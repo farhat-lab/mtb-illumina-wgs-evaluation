@@ -210,7 +210,7 @@ tab_str="\t"
 rule infer_DuplicatedRegions_from_mpileup_MM2BAM_GC3_PP_AlignTo_H37rv:
     input:
         MM2_AtoRef_Flye_I3_PP_BAM_mpileup_out = output_Dir + "/{sampleID_Wi_Ill_And_PB}/pacbio_VariantCallingVersusH37Rv/Minimap2_Flye_I3_PP_AlignTo_H37rv/{sampleID_Wi_Ill_And_PB}.mm2.Flye_I3_PP_AssemblyToH37rv.bam.mpileup.txt.vcf",
-        H37rv_bedtools_genome="References/bedtools_ref/GCF_000195955.2_ASM19595v2_genomic.fasta.bedtools.genome",
+        H37rv_bedtools_genome="../References/bedtools_ref/GCF_000195955.2_ASM19595v2_genomic.fasta.bedtools.genome",
 
     output:
         MM2_AtoRef_PP_DupRegions_BED = output_Dir + "/{sampleID_Wi_Ill_And_PB}/pacbio_VariantCallingVersusH37Rv/Minimap2_Flye_I3_PP_AlignTo_H37rv/{sampleID_Wi_Ill_And_PB}.mm2.Flye_I3_PP_AssemblyToH37rv.bam.mpileup.txt.vcf.DupRegions.bed",
@@ -363,7 +363,7 @@ tab_str="\t"
 rule process_Pmap_and_NucDiffSV_Regions_ForStratification_V2_With50bpLengthFilter_SVs:
     input:
         H37rv_bedtools_genome="References/bedtools_ref/GCF_000195955.2_ASM19595v2_genomic.fasta.bedtools.genome",
-        Pmap_K50E4_Below1_Regions_BED = "References/Mtb_H37Rv_MaskingSchemes/201027_PMap_K50E4_Regions_BELOW_1.bed",
+        Pmap_K50E4_Below1_Regions_BED = "References/PileupMappability_RegionsRemoved/201027_PMap_K50E4_Regions_BELOW_1.bed",
         WiSV_Regions_NucDiff_FilteredSVs_With50bpLengthFilter_NoInversions_PaddedBy100bp_BED = output_Dir + "/{sampleID_Wi_Ill_And_PB}/pacbio_VariantCallingVersusH37Rv/NucDiff_Analysis_{sampleID_Wi_Ill_And_PB}/results/NucDiff_{sampleID_Wi_Ill_And_PB}_ref_struct.Filtered.SVs.Parsed.With50bpLengthFilter.NoInversions.PaddedBy100bp.bed",
         NoSV_Regions_NucDiff_FilteredSVs_With50bpLengthFilter_NoInversions_PaddedBy100bp_COMPLEMENT_BED = output_Dir + "/{sampleID_Wi_Ill_And_PB}/pacbio_VariantCallingVersusH37Rv/NucDiff_Analysis_{sampleID_Wi_Ill_And_PB}/results/NucDiff_{sampleID_Wi_Ill_And_PB}_ref_struct.Filtered.SVs.Parsed.With50bpLengthFilter.NoInversions.PaddedBy100bp.complement.bed",
     output:
@@ -374,7 +374,7 @@ rule process_Pmap_and_NucDiffSV_Regions_ForStratification_V2_With50bpLengthFilte
         i_LowMap_WiSV_IntersectionOfRegions_BED = output_Dir + "/{sampleID_Wi_Ill_And_PB}/Hap.py_VariantCalling_EvalDir/Happy_StratificationFiles/StratRegions.V2.LowMap_WiSV_Regions.intersected.{sampleID_Wi_Ill_And_PB}.bed",
         i_HighMap_WiSV_IntersectionOfRegions_BED = output_Dir + "/{sampleID_Wi_Ill_And_PB}/Hap.py_VariantCalling_EvalDir/Happy_StratificationFiles/StratRegions.V2.HighMap_WiSV_Regions.intersected.{sampleID_Wi_Ill_And_PB}.bed",
         i_stratRegions_V2_By_Pmap_and_SVs_ForHappy_TSV = output_Dir + "/{sampleID_Wi_Ill_And_PB}/Hap.py_VariantCalling_EvalDir/Happy_StratificationFiles/stratificationRegions.V2.{sampleID_Wi_Ill_And_PB}.tsv",
-    conda:
+    conda:  
         "CondaEnvs/nucdiff_2_0_3_Conda.yml"
     threads: 1
     shell:
@@ -387,13 +387,10 @@ rule process_Pmap_and_NucDiffSV_Regions_ForStratification_V2_With50bpLengthFilte
         "bedtools intersect -a {output.Low_PileupMappability_Regions} -b {input.WiSV_Regions_NucDiff_FilteredSVs_With50bpLengthFilter_NoInversions_PaddedBy100bp_BED} > {output.i_LowMap_WiSV_IntersectionOfRegions_BED} \n"
         "bedtools intersect -a {output.High_PileupMappability_Regions} -b {input.WiSV_Regions_NucDiff_FilteredSVs_With50bpLengthFilter_NoInversions_PaddedBy100bp_BED} > {output.i_HighMap_WiSV_IntersectionOfRegions_BED} \n"
         "\n"
-        "echo -e 'HighPmap_NoSV{tab_str}StratRegions.HighMap_NoSV_Regions.intersected.{wildcards.sampleID_Wi_Ill_And_PB}.bed' > {output.i_stratRegions_V2_By_Pmap_and_SVs_ForHappy_TSV} \n"
-        "echo -e 'LowPmap_NoSV{tab_str}StratRegions.LowMap_NoSV_Regions.intersected.{wildcards.sampleID_Wi_Ill_And_PB}.bed' >> {output.i_stratRegions_V2_By_Pmap_and_SVs_ForHappy_TSV} \n"
-        "echo -e 'LowPmap_WiSV{tab_str}StratRegions.LowMap_WiSV_Regions.intersected.{wildcards.sampleID_Wi_Ill_And_PB}.bed' >> {output.i_stratRegions_V2_By_Pmap_and_SVs_ForHappy_TSV} \n"
-        "echo -e 'HighPmap_WiSV{tab_str}StratRegions.HighMap_WiSV_Regions.intersected.{wildcards.sampleID_Wi_Ill_And_PB}.bed' >> {output.i_stratRegions_V2_By_Pmap_and_SVs_ForHappy_TSV} \n"
-
-
-
+        "echo -e 'HighPmap_NoSV{tab_str}StratRegions.V2.HighMap_NoSV_Regions.intersected.{wildcards.sampleID_Wi_Ill_And_PB}.bed' > {output.i_stratRegions_V2_By_Pmap_and_SVs_ForHappy_TSV} \n"
+        "echo -e 'LowPmap_NoSV{tab_str}StratRegions.V2.LowMap_NoSV_Regions.intersected.{wildcards.sampleID_Wi_Ill_And_PB}.bed' >> {output.i_stratRegions_V2_By_Pmap_and_SVs_ForHappy_TSV} \n"
+        "echo -e 'LowPmap_WiSV{tab_str}StratRegions.V2.LowMap_WiSV_Regions.intersected.{wildcards.sampleID_Wi_Ill_And_PB}.bed' >> {output.i_stratRegions_V2_By_Pmap_and_SVs_ForHappy_TSV} \n"
+        "echo -e 'HighPmap_WiSV{tab_str}StratRegions.V2.HighMap_WiSV_Regions.intersected.{wildcards.sampleID_Wi_Ill_And_PB}.bed' >> {output.i_stratRegions_V2_By_Pmap_and_SVs_ForHappy_TSV} \n"
 
 
 
@@ -446,6 +443,8 @@ rule BED_substract_DupRegions_From_AmbRegions:
     output:
         output_Dir + "/{sampleID_Wi_Ill_And_PB}/EmpiricalBasePairRecall_Analysis_V7_PacBio_Vs_IlluminaPilon/EBR.V7.IndivIsolate.{sampleID_Wi_Ill_And_PB}.Ambiguous.NoDupRegions.HighSeqDivergenceOnly.Regions.bed",
     threads: 1
+    conda:
+        "CondaEnvs/samtools_AND_bcftools_200128_Conda.yml"
     shell: 
        "bedtools subtract -a {input.EBR_Indiv_BED_AmbOnlyRegions_BED} -b {input.MM2_AtoRef_PP_DupRegions_BED} | cut -f 1-3 > {output}"
 

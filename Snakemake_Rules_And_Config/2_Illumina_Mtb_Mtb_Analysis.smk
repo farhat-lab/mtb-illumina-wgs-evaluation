@@ -310,8 +310,6 @@ rule calculate_F2_Score_IlluminaPE:
         Coll2014_LinSpeSNPs_final_CSV = "Scripts/Coll2014_LinSpeSNPs_final.csv",        
     output:
         F2_Score_TXT = output_Dir + "/{sampleID_WiIll}/IlluminaWGS/F2_Calculation/{sampleID_WiIll}_F2.txt",
-        #TEMP_BCF = output_Dir + "/{sampleID_WiIll}/IlluminaWGS/F2_Calculation/current.bcf",
-        #TEMP_BCF_CSI = output_Dir + "/{sampleID_WiIll}/IlluminaWGS/F2_Calculation/current.bcf",
     params:
         F2_OutputDir_PATH = output_Dir + "/{sampleID_WiIll}/IlluminaWGS/F2_Calculation",
         TEMP_BCF = output_Dir + "/{sampleID_WiIll}/IlluminaWGS/F2_Calculation/current.bcf",

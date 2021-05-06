@@ -48,6 +48,8 @@ rule PacBio_Subreads_GetReadLengthsTSV:
     params:
         bioawk_GetReadLengths_TEXT = "'{print $name, length($seq)}'"
     threads: 1
+    conda:
+        "CondaEnvs/bioinfo_util_env_V1.yml" 
     shell:
         "bioawk -c fastx {params.bioawk_GetReadLengths_TEXT} {input} > {output}"
 
@@ -139,7 +141,10 @@ rule samtools_faidx_FlyeAssembly:
     conda:
         "CondaEnvs/PacBio_Software_py27_Conda.yml"
     threads: 1
-    shell: "samtools faidx {input}"
+    conda:
+        "CondaEnvs/bioinfo_util_env_V1.yml" 
+    shell:
+        "samtools faidx {input}"
 
 
 
