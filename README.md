@@ -5,7 +5,7 @@ This repository contains the bioinformatics pipeline and code needed to reproduc
 
 ## Contents
 - [Installation](#Installation)
-- [SnakeMake Pipeline]()
+- [SnakeMake Pipeline](#Processing-of-Illumina-and-PacBio-sequencing)
 - [Data Analysis](#Supporting-Data-Analysis)
 - [Results](#Results)
 - [License](#License)
@@ -39,7 +39,7 @@ The provided Snakemake pipeline implements all steps related to Assembly, alignm
 To run the SnakeMake pipeline you need to provide:
 - a) A TSV with sample metadata and input FASTQ paths (Illumina and PacBio). Examples can be found in `Data/201202_PMP_SM_50CI_AllDataSets_InputSeqDataPaths`.
 - b) Path to a target outout directory
-- c) A [config file](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/blob/main/Snakemake_Rules_And_Config/config_PMP_V6.json) with paths to H37Rv reference files ([NC_000962.3](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3) ) in FASTA and GBK formats.
+- c) A [config file](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/blob/main/Snakemake_Rules_And_Config/config_PMP_V6.json) with paths to H37Rv reference files ([NC_000962.3](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3)) in FASTA and GBK formats.
 - d) A [cluster config file](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/blob/main/Snakemake_Rules_And_Config/clusterConfig_PMP_V10.json) specifing computational resource requirements for steps of the pipeline when using [SLURM](https://slurm.schedmd.com/documentation.html)
 
 
@@ -76,11 +76,15 @@ The [DataAnalysis/](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tr
 
 # Results
 
-### Useful Genome-wide statistics and visualizations (H37Rv, the Mtb reference genome)
+### Useful Genome-wide statistics and visualizations (across [H37Rv]((https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3)), the Mtb reference genome)
 From this work we present many useful results that can help guide future genomics studies of the Mtb genome using Illumina WGS. 
 
-### Genome Masking Schemes
-#### PROVIDED GENOME MASKING SCHEMES HERE
+### [Genome Masking Schemes](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tree/main/References/Mtb_H37Rv_MaskingSchemes)
+1) Refined Low Confidence (RLC) Regions ([RLC_Regions.H37Rv.bed](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/References/Mtb_H37Rv_MaskingSchemes/RLC_Regions.H37Rv.bed))
+
+2) Low Pileup Mappability Regions (K=50bp, E=4 mismatches, [201027_PMap_K50E4_Regions_BELOW_1.bed](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/References/Mtb_H37Rv_MaskingSchemes/201027_PMap_K50E4_Regions_BELOW_1.bed))
+
+3) RLC Regions & Low Pileup Mappability Regions **combined** ([RLC_Regions.Plus.LowPmapK50E4.H37Rv.bed](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/B_Extra_UsefulDataFiles/F_Defining_RLC_Regions/RLC_Regions.Plus.LowPmapK50E4.H37Rv.bed))
 
 
 ## License
