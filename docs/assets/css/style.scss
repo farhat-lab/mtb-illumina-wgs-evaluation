@@ -1,0 +1,15 @@
+---
+---
+// Text
+$section-headings-color: #34405B !default;
+$body-link-color: #C26D69 !default;
+
+
+@import "{{ site.theme }}";
+
+.page-header {
+  text-align: center;
+  background-color: #051421;
+  background-image: none;
+}
+
