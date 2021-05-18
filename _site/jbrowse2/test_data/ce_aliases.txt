@@ -1,7 +1,0 @@
-I	chrI
-II	chrII
-III	chrIII
-IV	chrIV
-V	chrV
-X	chrX
-MT	chrM
