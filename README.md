@@ -79,7 +79,7 @@ The [DataAnalysis/](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tr
 ### Useful Genome-wide statistics and visualizations (across [H37Rv]((https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3)), the Mtb reference genome)
 From this work we present many useful results that can help guide future genomics studies of the Mtb genome using Illumina WGS. 
 
-### [Genomewide visualizations](https://farhat-lab.github.io/mtb-illumina-wgs-evaluation/jbrowse2/index.html)
+### [Interactive EBR & Pileup Mappability visualizations](https://farhat-lab.github.io/mtb-illumina-wgs-evaluation/jbrowse2/index.html)
 
 
 
