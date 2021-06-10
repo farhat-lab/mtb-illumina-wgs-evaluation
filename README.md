@@ -2,6 +2,8 @@
 
 This repository contains the bioinformatics pipeline and code needed to reproduce the analysis for [*Genomic sequence characteristics and the empiric accuracy of short-read sequencing, 2021, BioRxiv*](https://www.biorxiv.org/content/10.1101/2021.04.08.438862v1). All key bioinformatics processing is implemented using the [SnakeMake](https://snakemake.github.io/) workflow system, along with all downstream analysis available in Jupyter notebooks using Python 3.7. All software dependencies are defined for processing and analysis steps using [Conda](https://docs.conda.io/en/latest/). 
 
+Click [here](https://farhat-lab.github.io/mtb-illumina-wgs-evaluation/jbrowse2/index.html) to interactively explore the key results from this paper. More information can be found below. 
+
 
 ## Contents
 - [Installation](#Installation)
