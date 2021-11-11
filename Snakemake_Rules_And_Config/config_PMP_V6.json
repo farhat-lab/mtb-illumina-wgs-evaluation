@@ -2,4 +2,5 @@
     "RefGenome_FA_PATH" : "/n/data1/hms/dbmi/farhat/mm774/References/GCF_000195955.2_ASM19595v2_genomic.fasta",
     "H37rv_DnaA_FA_PATH" : "References/DnaA_MTb_H37Rv_dna.fasta",
     "H37rv_GBK_PATH" : "/n/data1/hms/dbmi/farhat/mm774/References/GCF_000195955.2_NC_000962.3_genomic.gbk",
+    "GATK4_PATH" : "/n/data1/hms/dbmi/farhat/mm774/MGM_bin/gatk-4.1.7.0/gatk",
 }

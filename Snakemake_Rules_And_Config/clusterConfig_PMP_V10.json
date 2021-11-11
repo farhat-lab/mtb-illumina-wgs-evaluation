@@ -1,11 +1,11 @@
 {
     "__default__" :
     {
-        "t" : "0-00:4:0",
+        "t" : "0-00:5:0",
         "n" : 1,
         "c" : 1,
         "p" : "short",
-        "mem" : "2500mb",
+        "mem" : "3000mb",
         "o" : "O2logs/cluster/{rule}.{wildcards}.out",
         "e" : "O2logs/cluster/{rule}.{wildcards}.out"
     },
@@ -32,7 +32,7 @@
     },
     "trimmomatic_Illumina_PE_Trimming" :
     {
-        "t" : "0-01:30:0",
+        "t" : "0-00:30:0",
         "n" : 8,
         "p" : "short",
         "mem" : "4G",
@@ -247,4 +247,113 @@
         "p" : "short",
         "mem" : "6G",
     },
+
+
+
+
+    "bwa_map_IllPE" :
+    {
+        "t" : "0-00:20:0",
+        "n" : 8,
+        "p" : "short",
+        "mem" : "8G",
+    },
+    "MM2_SR_IllPE" :
+    {
+        "t" : "0-00:20:0",
+        "n" : 8,
+        "p" : "short",
+        "mem" : "8G",
+    },
+    "bowtie2_IllPE" :
+    {
+        "t" : "0-00:20:0",
+        "n" : 8,
+        "p" : "short",
+        "mem" : "8G",
+    },
+    "URMAP_IllPE" :
+    {
+        "t" : "0-00:20:0",
+        "n" : 8,
+        "p" : "short",
+        "mem" : "8G",
+    },
+    
+    "samtools_ViewAndSort_IllPE_AllAligners" :
+    {
+        "t" : "0-00:10:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "4G",
+    },
+    "picard_RemoveDup_IllPE_AllAligners" :
+    {
+        "t" : "0-0:10:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "6G",
+    },
+
+    "samtools_rmdup_IllPE_AllAligners" :
+    {
+        "t" : "0-0:8:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "8G",
+    },
+
+
+    "pilon_VariantCalling_IllPE" :
+    {
+        "t" : "0-00:20:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "12G",
+    },    
+
+
+    "bcftools_Call_VariantCalling_IllPE" :
+    {
+        "t" : "0-00:25:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "10G",
+    },  
+
+    "mpileup_VarScan2_VariantCalling_IllPE_SNPs_And_INDELs" :
+    {
+        "t" : "0-00:22:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "12G",
+    },  
+
+
+    "gatk_HaplotypeCaller_VariantCalling_IllPE" :
+    {
+        "t" : "0-00:30:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "12G",
+    },  
+
+    "convert_GT_HaploidToDiploid_gatk_CNNscore_2D_IllPE_AlignTo_H37rv" :
+    {
+        "t" : "0-00:3:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "1G",
+    },  
+
+
+    "gatk_CNNscore_2D" :
+    {
+        "t" : "0-00:10:0",
+        "n" : 1,
+        "p" : "short",
+        "mem" : "12G",
+    },  
+
+
 }
