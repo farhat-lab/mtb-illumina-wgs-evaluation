@@ -2,7 +2,7 @@
 
 This repository contains the bioinformatics pipeline and code needed to reproduce the analysis for [*Genomic sequence characteristics and the empiric accuracy of short-read sequencing, 2021, BioRxiv*](https://www.biorxiv.org/content/10.1101/2021.04.08.438862v1). All key bioinformatics processing is implemented using the [SnakeMake](https://snakemake.github.io/) workflow system, along with all downstream analysis available in Jupyter notebooks using Python 3.7. All software dependencies are defined for processing and analysis steps using [Conda](https://docs.conda.io/en/latest/). 
 
-Click [here](https://farhat-lab.github.io/mtb-illumina-wgs-evaluation/jbrowse2/index.html) to interactively explore the key results from this paper. More information can be found below. 
+Click [here](https://farhat-lab.github.io/mtb-illumina-wgs-evaluation/jbrowse2/index.html) to interactively explore the key results from this paper in an online genome browser. More information can be found below. 
 
 
 ## Contents
@@ -81,7 +81,22 @@ The [DataAnalysis/](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tr
 ### Useful Genome-wide statistics and visualizations (across [H37Rv]((https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3)), the Mtb reference genome)
 From this work we present many useful results that can help guide future genomics studies of the Mtb genome using Illumina WGS. 
 
-### [Interactive EBR & Pileup Mappability visualizations](https://farhat-lab.github.io/mtb-illumina-wgs-evaluation/jbrowse2/index.html)
+#### Pileup Mappability (K = 50 bp, E >= 4 mismatches) :
+[201027_H37rv_PileupMappability_K50_E4.bedgraph](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/C_BrowserTracks/201027_H37rv_PileupMappability_K50_E4.bedgraph) <br>
+[201027_H37rv_PileupMappability_K50_E4.bw](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/C_BrowserTracks/201027_H37rv_PileupMappability_K50_E4.bw) <br>
+
+#### Pileup Mappability (K = 100 bp, E >= 4 mismatches) :
+[201027_H37rv_PileupMappability_K100_E4.bedgraph](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/C_BrowserTracks/201027_H37rv_PileupMappability_K100_E4.bedgraph) <br>
+[201027_H37rv_PileupMappability_K100_E4.bw](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/C_BrowserTracks/201027_H37rv_PileupMappability_K100_E4.bw) <br>
+
+
+#### Empirical Base pair Recall (EBR, 36 clinical Mtb isolates):
+[210112_EBR_V7_36CI.bedgraph](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/C_BrowserTracks/210112_EBR_V7_36CI.bedgraph) <br>
+[210112_EBR_V7_36CI.bw](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/C_BrowserTracks/210112_EBR_V7_36CI.bw) <br>
+
+
+#### [Interactive EBR & Pileup Mappability visualization](https://farhat-lab.github.io/mtb-illumina-wgs-evaluation/jbrowse2/index.html)
+These results can easily be explored in a browser based JBroswe2 genome browser, please click [here](https://farhat-lab.github.io/mtb-illumina-wgs-evaluation/jbrowse2/index.html). If you would like to visualize this genome-wide statistics in your own genome browser, please use the .bedgraph and .bw files listed above.
 
 
 
