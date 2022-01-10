@@ -1,6 +1,6 @@
-# Evaluation of short-read sequencing performance across the Mtb genome
+# Benchmarking the accuracy of short-read sequencing across the **M. tuberculosis** genome
 
-This repository contains the bioinformatics pipeline and code needed to reproduce the analysis for [*Genomic sequence characteristics and the empiric accuracy of short-read sequencing, 2021, BioRxiv*](https://www.biorxiv.org/content/10.1101/2021.04.08.438862v1). All key bioinformatics processing is implemented using the [SnakeMake](https://snakemake.github.io/) workflow system, along with all downstream analysis available in Jupyter notebooks using Python 3.7. All software dependencies are defined for processing and analysis steps using [Conda](https://docs.conda.io/en/latest/). 
+This repository contains the bioinformatics pipeline and code needed to reproduce the analysis for [*Benchmarking the empirical accuracy of short-read sequencing across the M. tuberculosis genome, 2022, Bioinformatics*](https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btac023/6502279). All key bioinformatics processing is implemented using the [SnakeMake](https://snakemake.github.io/) workflow system, along with all downstream analysis available in Jupyter notebooks using Python 3.7. All software dependencies are defined for processing and analysis steps using [Conda](https://docs.conda.io/en/latest/). 
 
 Click [here](https://farhat-lab.github.io/mtb-illumina-wgs-evaluation/jbrowse2/index.html) to interactively explore the key results from this paper in an online genome browser. More information can be found below. 
 
@@ -78,6 +78,7 @@ The [DataAnalysis/](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tr
 
 # Results
 
+
 ### Useful Genome-wide statistics and visualizations (across [H37Rv]((https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3)), the Mtb reference genome)
 From this work we present many useful results that can help guide future genomics studies of the Mtb genome using Illumina WGS. 
 
@@ -97,6 +98,9 @@ From this work we present many useful results that can help guide future genomic
 
 #### [Interactive EBR & Pileup Mappability visualization](https://farhat-lab.github.io/mtb-illumina-wgs-evaluation/jbrowse2/index.html)
 These results can easily be explored in a browser based JBroswe2 genome browser, please click [here](https://farhat-lab.github.io/mtb-illumina-wgs-evaluation/jbrowse2/index.html). If you would like to visualize this genome-wide statistics in your own genome browser, please use the .bedgraph and .bw files listed above.
+
+#### Pileup Mappability and EBR summarized at the feature-level (genes + intergenic regions) across H37Rv
+[AF7_H37Rv_FeatureLevelAnalysis.EBR_And_Pmap.tsv](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/A_Manuscript_AdditionalFiles/AF7_H37Rv_FeatureLevelAnalysis.EBR_And_Pmap.tsv) contains the mean EBR and Pileup mappability across all genes and intergenic regions of the H37Rv genome. <br>
 
 
 
