@@ -82,11 +82,11 @@ The [DataAnalysis/](https://github.com/farhat-lab/mtb-illumina-wgs-evaluation/tr
 ### Useful Genome-wide statistics and visualizations (across [H37Rv]((https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3)), the Mtb reference genome)
 From this work we present many useful results that can help guide future genomics studies of the Mtb genome using Illumina WGS. 
 
-#### Pileup Mappability (K = 50 bp, E >= 4 mismatches) :
+#### Pileup Mappability (K = 50 bp, E <= 4 mismatches):
 [201027_H37rv_PileupMappability_K50_E4.bedgraph](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/C_BrowserTracks/201027_H37rv_PileupMappability_K50_E4.bedgraph) <br>
 [201027_H37rv_PileupMappability_K50_E4.bw](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/C_BrowserTracks/201027_H37rv_PileupMappability_K50_E4.bw) <br>
 
-#### Pileup Mappability (K = 100 bp, E >= 4 mismatches) :
+#### Pileup Mappability (K = 100 bp, E <= 4 mismatches):
 [201027_H37rv_PileupMappability_K100_E4.bedgraph](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/C_BrowserTracks/201027_H37rv_PileupMappability_K100_E4.bedgraph) <br>
 [201027_H37rv_PileupMappability_K100_E4.bw](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/C_BrowserTracks/201027_H37rv_PileupMappability_K100_E4.bw) <br>
 
