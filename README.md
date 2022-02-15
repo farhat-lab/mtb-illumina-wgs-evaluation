@@ -112,6 +112,24 @@ These results can easily be explored in a browser based JBroswe2 genome browser,
 3) RLC Regions & Low Pileup Mappability Regions **combined** ([RLC_Regions.Plus.LowPmapK50E4.H37Rv.bed](https://raw.githubusercontent.com/farhat-lab/mtb-illumina-wgs-evaluation/main/Results/B_Extra_UsefulDataFiles/F_Defining_RLC_Regions/RLC_Regions.Plus.LowPmapK50E4.H37Rv.bed))
 
 
+# How to filter a VCF using a masking scheme
+You can use [bedtools intersect](https://bedtools.readthedocs.io/en/latest/content/tools/intersect.html) to remove all variants in a VCF file that overlap with a set of regions (BED format).  
+
+The example below shows how to remove all variants (VCF) overlapping with the RLC regions (BED format).
+
+```
+# Define path to RLC regions (BED)
+RLC_Regions_BED = "RLC_Regions.H37Rv.bed"
+
+# Define path to VCF to mask/filter
+i_VCF="Mtb.Variants.vcf"
+
+# Define path to output VCF that will have all variants overlapping with RLC regions removed.
+i_VCF_NoRLC_Regions="Mtb.Variants.NoRLC.vcf"
+
+bedtools intersect -header -v -a ${i_VCF} -b ${RLC_Regions_BED} > ${i_VCF_NoRLC_Regions}
+```
+
+
 ## License
 This repository is distributed under the [MIT license terms](LICENSE).
-
