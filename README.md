@@ -127,7 +127,7 @@ i_VCF="Mtb.Variants.vcf"
 # Define path to output VCF that will have all variants overlapping with RLC regions removed.
 i_VCF_NoRLC_Regions="Mtb.Variants.NoRLC.vcf"
 
-bedtools intersect -header -v -a ${i_VCF} -b ${RLC_Regions_BED} > ${i_VCF_NoRLC_Regions}
+bedtools intersect -header -v -a ${i_VCF} -b ${RLC_Regions_BED} -wa > ${i_VCF_NoRLC_Regions}
 ```
 
 
